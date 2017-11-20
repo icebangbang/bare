@@ -1,0 +1,4 @@
+com/ecreditpal/chain/bare/model/exception/CustomException.class
+com/ecreditpal/chain/bare/model/exception/CustomErrorCode.class
+com/ecreditpal/chain/bare/model/po/BasePO.class
+com/ecreditpal/chain/bare/model/po/SupervisorsPO.class

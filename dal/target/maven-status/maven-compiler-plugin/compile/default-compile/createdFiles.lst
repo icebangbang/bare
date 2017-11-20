@@ -1,0 +1,6 @@
+com/ecreditpal/chain/bare/dal/activejdbc/ActiveJDBCUtil.class
+com/ecreditpal/chain/bare/dal/mapper/base/BaseMapper.class
+com/ecreditpal/chain/bare/dal/activejdbc/DBConnectionManager.class
+com/ecreditpal/chain/bare/dal/mapper/SupervisorsMapper.class
+com/ecreditpal/chain/bare/dal/activejdbc/MakeInstrumentationUtil.class
+com/ecreditpal/chain/bare/dal/dao/BaseDAO.class

@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "com.ecreditpal.chain.bare.dal.mapper.SupervisorsMapper">
+
+    <resultMap id = "BaseResultMap"
+               type = "com.ecreditpal.chain.bare.model.po.SupervisorsPO"
+               extends = "BASE_MAPPER.BASE_RESULT_MAP">
+        <result column = "name" property = "name" />
+        <result column = "reality_name" property = "realityName" />
+        <result column = "password" property = "password" />
+        <result column = "password_continuous_errors" property = "passwordContinuousErrors" />
+        <result column = "if_password_error_locked" property = "ifPasswordErrorLocked" />
+        <result column = "password_error_locked_time" property = "passwordErrorLockedTime" />
+        <result column = "if_allow_login" property = "ifAllowLogin" />
+        <result column = "login_count" property = "loginCount" />
+        <result column = "last_login_time" property = "lastLoginTime" />
+        <result column = "last_login_ip" property = "lastLoginIp" />
+        <result column = "last_logout_time" property = "lastLogoutTime" />
+        <result column = "last_login_city" property = "lastLoginCity" />
+        <result column = "email" property = "email" />
+        <result column = "mobile" property = "mobile" />
+        <result column = "level" property = "level" />
+        <result column = "if_erased" property = "ifErased" />
+        <result column = "if_customer" property = "ifCustomer" />
+        <result column = "customer_num" property = "customerNum" />
+    </resultMap>
+
+    <sql id = "BaseColumnList">
+        <trim suffix="" suffixOverrides=",">
+            <include refid = "BASE_MAPPER.BASE_COLUMN_LIST" />
+            name as name,
+            reality_name as realityName,
+            password as password,
+            password_continuous_errors as passwordContinuousErrors,
+            if_password_error_locked as ifPasswordErrorLocked,
+            password_error_locked_time as passwordErrorLockedTime,
+            if_allow_login as ifAllowLogin,
+            login_count as loginCount,
+            last_login_time as lastLoginTime,
+            last_login_ip as lastLoginIp,
+            last_logout_time as lastLogoutTime,
+            last_login_city as lastLoginCity,
+            email as email,
+            mobile as mobile,
+            level as level,
+            if_erased as ifErased,
+            if_customer as ifCustomer,
+            customer_num as customerNum,
+        </trim>
+    </sql>
+
+    <sql id = "BaseWhereClause">
+        <where>
+            <trim prefixOverrides = "and">
+                <include refid = "BASE_MAPPER.BASE_WHERE_CLAUSE" />
+                <if test = "name != null">
+                    and name = #{name}
+                </if>
+                <if test = "realityName != null">
+                    and reality_name = #{realityName}
+                </if>
+                <if test = "password != null">
+                    and password = #{password}
+                </if>
+                <if test = "passwordContinuousErrors != null">
+                    and password_continuous_errors = #{passwordContinuousErrors}
+                </if>
+                <if test = "ifPasswordErrorLocked != null">
+                    and if_password_error_locked = #{ifPasswordErrorLocked}
+                </if>
+                <if test = "passwordErrorLockedTime != null">
+                    and password_error_locked_time = #{passwordErrorLockedTime}
+                </if>
+                <if test = "ifAllowLogin != null">
+                    and if_allow_login = #{ifAllowLogin}
+                </if>
+                <if test = "loginCount != null">
+                    and login_count = #{loginCount}
+                </if>
+                <if test = "lastLoginTime != null">
+                    and last_login_time = #{lastLoginTime}
+                </if>
+                <if test = "lastLoginIp != null">
+                    and last_login_ip = #{lastLoginIp}
+                </if>
+                <if test = "lastLogoutTime != null">
+                    and last_logout_time = #{lastLogoutTime}
+                </if>
+                <if test = "lastLoginCity != null">
+                    and last_login_city = #{lastLoginCity}
+                </if>
+                <if test = "email != null">
+                    and email = #{email}
+                </if>
+                <if test = "mobile != null">
+                    and mobile = #{mobile}
+                </if>
+                <if test = "level != null">
+                    and level = #{level}
+                </if>
+                <if test = "ifErased != null">
+                    and if_erased = #{ifErased}
+                </if>
+                <if test = "ifCustomer != null">
+                    and if_customer = #{ifCustomer}
+                </if>
+                <if test = "customerNum != null">
+                    and customer_num = #{customerNum}
+                </if>
+            </trim>
+        </where>
+    </sql>
+
+    <sql id = "BaseUpdateSet">
+        <set>
+            <trim suffix="" suffixOverrides=",">
+                <include refid = "BASE_MAPPER.BASE_UPDATE_SET" />
+                <if test = "name != null">
+                    name = #{name},
+                </if>
+                <if test = "realityName != null">
+                    reality_name = #{realityName},
+                </if>
+                <if test = "password != null">
+                    password = #{password},
+                </if>
+                <if test = "passwordContinuousErrors != null">
+                    password_continuous_errors = #{passwordContinuousErrors},
+                </if>
+                <if test = "ifPasswordErrorLocked != null">
+                    if_password_error_locked = #{ifPasswordErrorLocked},
+                </if>
+                <if test = "passwordErrorLockedTime != null">
+                    password_error_locked_time = #{passwordErrorLockedTime},
+                </if>
+                <if test = "ifAllowLogin != null">
+                    if_allow_login = #{ifAllowLogin},
+                </if>
+                <if test = "loginCount != null">
+                    login_count = #{loginCount},
+                </if>
+                <if test = "lastLoginTime != null">
+                    last_login_time = #{lastLoginTime},
+                </if>
+                <if test = "lastLoginIp != null">
+                    last_login_ip = #{lastLoginIp},
+                </if>
+                <if test = "lastLogoutTime != null">
+                    last_logout_time = #{lastLogoutTime},
+                </if>
+                <if test = "lastLoginCity != null">
+                    last_login_city = #{lastLoginCity},
+                </if>
+                <if test = "email != null">
+                    email = #{email},
+                </if>
+                <if test = "mobile != null">
+                    mobile = #{mobile},
+                </if>
+                <if test = "level != null">
+                    level = #{level},
+                </if>
+                <if test = "ifErased != null">
+                    if_erased = #{ifErased},
+                </if>
+                <if test = "ifCustomer != null">
+                    if_customer = #{ifCustomer},
+                </if>
+                <if test = "customerNum != null">
+                    customer_num = #{customerNum},
+                </if>
+            </trim>
+        </set>
+    </sql>
+
+    <!-- 查询总数 -->
+    <select id = "selectCount" resultType = "java.lang.Integer">
+        select count(id)
+        from supervisors
+        <include refid = "BaseWhereClause" />
+    </select>
+
+    <!-- 查询 -->
+    <select id = "select" resultMap = "BaseResultMap">
+        select
+        <include refid = "BaseColumnList" />
+        from supervisors
+        <include refid = "BaseWhereClause" />
+        <include refid = "BASE_MAPPER.BASE_ORDER_BY" />
+        <include refid = "BASE_MAPPER.BASE_LIMIT" />
+    </select>
+
+    <!-- 根据ID查询 -->
+    <select id = "selectById" resultMap = "BaseResultMap">
+        select
+        <include refid = "BaseColumnList" />
+        from supervisors
+        where id = #{id} and is_deleted = 0
+    </select>
+
+    <!-- 根据IDS批量查询 -->
+    <select id = "selectByIds" resultMap = "BaseResultMap">
+        select
+        <include refid = "BaseColumnList" />
+        from supervisors
+        where id in
+        (
+        <foreach collection = "array" index = "index" item = "tag" separator = ",">
+            #{tag}
+        </foreach>
+        ) and is_deleted = 0
+    </select>
+
+
+    <!-- 根据IDS批量删除 -->
+    <update id = "deleteByIds">
+        update supervisors
+        set is_deleted=1
+        where id in
+        (
+        <foreach collection = "array" index = "index" item = "tag" separator = ",">
+            #{tag}
+        </foreach>
+        )
+    </update>
+
+    <!-- 根据ID删除 -->
+    <update id = "deleteById">
+        update supervisors
+        set is_deleted=1
+        where id=#{id}
+    </update>
+
+    <!-- 删除 -->
+    <delete id = "delete">
+        update supervisors
+        set is_deleted=1
+        <include refid = "BaseWhereClause" />
+    </delete>
+
+    <!-- 添加   -->
+    <insert id = "insert" useGeneratedKeys = "true" keyProperty = "id">
+        insert into supervisors (
+        <trim suffix="" suffixOverrides=",">
+            <include refid = "BASE_MAPPER.BASE_INSERT_COLUMN" />
+            <if test = "name != null">
+                name,
+            </if>
+            <if test = "realityName != null">
+                reality_name,
+            </if>
+            <if test = "password != null">
+                password,
+            </if>
+            <if test = "passwordContinuousErrors != null">
+                password_continuous_errors,
+            </if>
+            <if test = "ifPasswordErrorLocked != null">
+                if_password_error_locked,
+            </if>
+            <if test = "passwordErrorLockedTime != null">
+                password_error_locked_time,
+            </if>
+            <if test = "ifAllowLogin != null">
+                if_allow_login,
+            </if>
+            <if test = "loginCount != null">
+                login_count,
+            </if>
+            <if test = "lastLoginTime != null">
+                last_login_time,
+            </if>
+            <if test = "lastLoginIp != null">
+                last_login_ip,
+            </if>
+            <if test = "lastLogoutTime != null">
+                last_logout_time,
+            </if>
+            <if test = "lastLoginCity != null">
+                last_login_city,
+            </if>
+            <if test = "email != null">
+                email,
+            </if>
+            <if test = "mobile != null">
+                mobile,
+            </if>
+            <if test = "level != null">
+                level,
+            </if>
+            <if test = "ifErased != null">
+                if_erased,
+            </if>
+            <if test = "ifCustomer != null">
+                if_customer,
+            </if>
+            <if test = "customerNum != null">
+                customer_num,
+            </if>
+        </trim>
+        )
+        values (
+        <trim suffix="" suffixOverrides=",">
+            <include refid = "BASE_MAPPER.BASE_INSERT_VALUE" />
+            <if test = "name != null">
+                #{name},
+            </if>
+            <if test = "realityName != null">
+                #{realityName},
+            </if>
+            <if test = "password != null">
+                #{password},
+            </if>
+            <if test = "passwordContinuousErrors != null">
+                #{passwordContinuousErrors},
+            </if>
+            <if test = "ifPasswordErrorLocked != null">
+                #{ifPasswordErrorLocked},
+            </if>
+            <if test = "passwordErrorLockedTime != null">
+                #{passwordErrorLockedTime},
+            </if>
+            <if test = "ifAllowLogin != null">
+                #{ifAllowLogin},
+            </if>
+            <if test = "loginCount != null">
+                #{loginCount},
+            </if>
+            <if test = "lastLoginTime != null">
+                #{lastLoginTime},
+            </if>
+            <if test = "lastLoginIp != null">
+                #{lastLoginIp},
+            </if>
+            <if test = "lastLogoutTime != null">
+                #{lastLogoutTime},
+            </if>
+            <if test = "lastLoginCity != null">
+                #{lastLoginCity},
+            </if>
+            <if test = "email != null">
+                #{email},
+            </if>
+            <if test = "mobile != null">
+                #{mobile},
+            </if>
+            <if test = "level != null">
+                #{level},
+            </if>
+            <if test = "ifErased != null">
+                #{ifErased},
+            </if>
+            <if test = "ifCustomer != null">
+                #{ifCustomer},
+            </if>
+            <if test = "customerNum != null">
+                #{customerNum},
+            </if>
+        </trim>
+        )
+    </insert>
+
+    <!-- 通过ID更新 -->
+    <update id = "updateById">
+        update supervisors
+        <include refid = "BaseUpdateSet" />
+        where id = #{id}
+    </update>
+
+    <insert id="batchInsert" parameterType="java.util.List">
+        insert into supervisors (
+        <trim suffix="" suffixOverrides=",">
+            is_deleted,
+            gmt_create,
+            creator,
+            gmt_modified,
+            modifier,
+            name,
+            reality_name,
+            password,
+            password_continuous_errors,
+            if_password_error_locked,
+            password_error_locked_time,
+            if_allow_login,
+            login_count,
+            last_login_time,
+            last_login_ip,
+            last_logout_time,
+            last_login_city,
+            email,
+            mobile,
+            level,
+            if_erased,
+            if_customer,
+            customer_num,
+        </trim>
+        )
+        values
+
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            <trim suffix="" suffixOverrides=",">
+                0,
+                <if test="item.gmtCreate != null">
+                    #{item.gmtCreate},
+                </if>
+                <if test="item.gmtCreate == null">
+                    now(),
+                </if>
+                <if test="item.creator != null">
+                    #{item.creator},
+                </if>
+                <if test="item.creator == null">
+                    0,
+                </if>
+                <if test="item.gmtModified != null">
+                    #{item.gmtModified},
+                </if>
+                <if test="item.gmtModified == null">
+                    now(),
+                </if>
+                <if test="item.creator != null">
+                    #{item.creator},
+                </if>
+                <if test="item.creator == null">
+                    0,
+                </if>
+                <if test="item.name != null">
+                    #{item.name},
+                </if>
+                <if test="item.name == null">
+                    '',
+                </if>
+                <if test="item.realityName != null">
+                    #{item.realityName},
+                </if>
+                <if test="item.realityName == null">
+                    '',
+                </if>
+                <if test="item.password != null">
+                    #{item.password},
+                </if>
+                <if test="item.password == null">
+                    '',
+                </if>
+                <if test="item.passwordContinuousErrors != null">
+                    #{item.passwordContinuousErrors},
+                </if>
+                <if test="item.passwordContinuousErrors == null">
+                    0 ,
+                </if>
+                <if test="item.ifPasswordErrorLocked != null">
+                    #{item.ifPasswordErrorLocked},
+                </if>
+                <if test="item.ifPasswordErrorLocked == null">
+                    NULL,
+                </if>
+                <if test="item.passwordErrorLockedTime != null">
+                    #{item.passwordErrorLockedTime},
+                </if>
+                <if test="item.passwordErrorLockedTime == null">
+                    '1970-01-01 12:00:00',
+                </if>
+                <if test="item.ifAllowLogin != null">
+                    #{item.ifAllowLogin},
+                </if>
+                <if test="item.ifAllowLogin == null">
+                    NULL,
+                </if>
+                <if test="item.loginCount != null">
+                    #{item.loginCount},
+                </if>
+                <if test="item.loginCount == null">
+                    0 ,
+                </if>
+                <if test="item.lastLoginTime != null">
+                    #{item.lastLoginTime},
+                </if>
+                <if test="item.lastLoginTime == null">
+                    '1970-01-01 12:00:00',
+                </if>
+                <if test="item.lastLoginIp != null">
+                    #{item.lastLoginIp},
+                </if>
+                <if test="item.lastLoginIp == null">
+                    '',
+                </if>
+                <if test="item.lastLogoutTime != null">
+                    #{item.lastLogoutTime},
+                </if>
+                <if test="item.lastLogoutTime == null">
+                    '1970-01-01 12:00:00',
+                </if>
+                <if test="item.lastLoginCity != null">
+                    #{item.lastLoginCity},
+                </if>
+                <if test="item.lastLoginCity == null">
+                    '',
+                </if>
+                <if test="item.email != null">
+                    #{item.email},
+                </if>
+                <if test="item.email == null">
+                    '',
+                </if>
+                <if test="item.mobile != null">
+                    #{item.mobile},
+                </if>
+                <if test="item.mobile == null">
+                    '',
+                </if>
+                <if test="item.level != null">
+                    #{item.level},
+                </if>
+                <if test="item.level == null">
+                    0 ,
+                </if>
+                <if test="item.ifErased != null">
+                    #{item.ifErased},
+                </if>
+                <if test="item.ifErased == null">
+                    NULL,
+                </if>
+                <if test="item.ifCustomer != null">
+                    #{item.ifCustomer},
+                </if>
+                <if test="item.ifCustomer == null">
+                    NULL,
+                </if>
+                <if test="item.customerNum != null">
+                    #{item.customerNum},
+                </if>
+                <if test="item.customerNum == null">
+                    '',
+                </if>
+            </trim>
+            )
+        </foreach>
+    </insert>
+
+</mapper>

@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <a onclick="clickAction()">上传身份证</a>
+        <img id="img" width="200" src="">
+        <script>
+            // 上传回调，提供给native
+            function takePicDone(data) {
+                document.getElementById('img').src = 'data: image / jpeg; base64, ' + data
+            }
+            function clickAction() {
+                webView.takePic()
+            }
+        </script>
+    </body>
+</html>

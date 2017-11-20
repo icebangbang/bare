@@ -1,0 +1,6 @@
+/Users/lifeng/Work/bare/dal/src/main/java/com/ecreditpal/chain/bare/dal/dao/BaseDAO.java
+/Users/lifeng/Work/bare/dal/src/main/java/com/ecreditpal/chain/bare/dal/activejdbc/ActiveJDBCUtil.java
+/Users/lifeng/Work/bare/dal/src/main/java/com/ecreditpal/chain/bare/dal/mapper/base/BaseMapper.java
+/Users/lifeng/Work/bare/dal/src/main/java/com/ecreditpal/chain/bare/dal/activejdbc/DBConnectionManager.java
+/Users/lifeng/Work/bare/dal/src/main/java/com/ecreditpal/chain/bare/dal/activejdbc/MakeInstrumentationUtil.java
+/Users/lifeng/Work/bare/dal/src/main/java/com/ecreditpal/chain/bare/dal/mapper/SupervisorsMapper.java

@@ -1,0 +1,4 @@
+com/ecreditpal/chain/bare/common/config/ConfigurationManager.class
+com/ecreditpal/chain/bare/common/config/FileUtil.class
+com/ecreditpal/chain/bare/common/serialize/JsonUtil.class
+com/ecreditpal/chain/bare/common/serialize/TestObj.class
